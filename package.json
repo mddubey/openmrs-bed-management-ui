@@ -1,0 +1,15 @@
+{
+    "name": "bed-management",
+    "version": "1.0.0",
+    "description": "A bed-management app for bahmni/openmrs.",
+    "license": "GPL-2.0",
+    "scripts": {
+        "main": "index.js",
+        "watch": "webpack --progress"
+    },
+    "author": "",
+    "devDependencies": {
+    },
+    "dependencies": {
+    }
+  }
