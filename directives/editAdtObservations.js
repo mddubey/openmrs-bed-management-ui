@@ -135,6 +135,6 @@ angular.module('bahmni.ipd')
                     visitTypeUuid: "="
                 },
                 controller: controller,
-                templateUrl: "views/editAdtObservations.html"
+                template: require("../views/editAdtObservations.html")
             };
         }]);

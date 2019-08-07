@@ -1,6 +1,6 @@
 'use strict';
 
-var Bahmni = Bahmni || {};
+window.Bahmni = window.Bahmni || {};
 Bahmni.IPD = Bahmni.IPD || {};
 
 Bahmni.IPD.Constants = (function () {

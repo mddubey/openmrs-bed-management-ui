@@ -32,7 +32,7 @@ angular.module('bahmni.ipd')
         return {
             restrict: 'E',
             controller: controller,
-            templateUrl: "views/backLinks.html",
+            template: require("../views/backLinks.html"),
             scope: {
                 type: "=",
                 name: "=",

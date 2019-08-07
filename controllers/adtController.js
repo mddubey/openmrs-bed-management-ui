@@ -195,13 +195,13 @@ angular.module('bahmni.ipd')
                     messagingService.showMessage("error", "Please select a bed to admit patient");
                 } else if ($scope.visitSummary && $scope.visitSummary.visitType !== $scope.defaultVisitTypeName && !hideStartNewVisitPopUp) {
                     ngDialog.openConfirm({
-                        template: 'views/visitChangeConfirmation.html',
+                        template: require('../views/visitChangeConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true
                     });
                 } else {
                     ngDialog.openConfirm({
-                        template: 'views/admitConfirmation.html',
+                        template: require('../views/admitConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true,
                         className: "ngdialog-theme-default ng-dialog-adt-popUp"
@@ -263,7 +263,7 @@ angular.module('bahmni.ipd')
                     messagingService.showMessage("error", "Please select a bed to transfer the patient");
                 } else {
                     ngDialog.openConfirm({
-                        template: 'views/transferConfirmation.html',
+                        template: require('../views/transferConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true,
                         className: "ngdialog-theme-default ng-dialog-adt-popUp"
@@ -321,7 +321,7 @@ angular.module('bahmni.ipd')
                             messagingService.showMessage("error", "No active visit found for this patient");
                         } else {
                             ngDialog.openConfirm({
-                                template: 'views/dischargeConfirmation.html',
+                                template: require('../views/dischargeConfirmation.html'),
                                 scope: $scope,
                                 closeByEscape: true,
                                 className: "ngdialog-theme-default ng-dialog-adt-popUp"

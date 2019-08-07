@@ -31,13 +31,13 @@ angular.module('ipd').config(['$stateProvider', '$httpProvider', '$urlRouterProv
                 },
                 views: {
                     'content': {
-                        templateUrl: 'views/home.html',
+                        template: require('./views/home.html'),
                         controller: function ($scope, appService) {
                             $scope.isBedManagementEnabled = appService.getAppDescriptor().getConfig("isBedManagementEnabled").value;
                         }
                     },
                     'additional-header': {
-                        templateUrl: ' views/header.html',
+                        template: require('./views/header.html'),
                         controller: 'HeaderController'
                     }
                 },
@@ -57,11 +57,11 @@ angular.module('ipd').config(['$stateProvider', '$httpProvider', '$urlRouterProv
                 },
                 views: {
                     'content': {
-                        templateUrl: 'views/bedManagement.html',
+                        template: require('./views/bedManagement.html'),
                         controller: 'BedManagementController'
                     },
                     'additional-header': {
-                        templateUrl: 'views/header.html',
+                        template: require('./views/header.html'),
                         controller: 'HeaderController'
                     }
                 },
@@ -75,7 +75,7 @@ angular.module('ipd').config(['$stateProvider', '$httpProvider', '$urlRouterProv
             })
             .state('bedManagement.bed', {
                 url: '/bed/:bedId',
-                templateUrl: 'views/bedManagement.html',
+                template: require('./views/bedManagement.html'),
                 controller: 'BedManagementController',
                 params: {
                     dashboardCachebuster: null,
@@ -93,7 +93,7 @@ angular.module('ipd').config(['$stateProvider', '$httpProvider', '$urlRouterProv
             })
             .state('bedManagement.patient', {
                 url: '/patient/:patientUuid',
-                templateUrl: 'views/bedManagement.html',
+                template: require('./views/bedManagement.html'),
                 controller: 'BedManagementController',
                 resolve: {
                     patientResolution: function ($stateParams, bedInitialization, patientInitialization) {
@@ -110,11 +110,11 @@ angular.module('ipd').config(['$stateProvider', '$httpProvider', '$urlRouterProv
                 },
                 views: {
                     'content': {
-                        templateUrl: 'views/dashboard.html',
+                        template: require('./views/dashboard.html'),
                         controller: 'AdtController'
                     },
                     'additional-header': {
-                        templateUrl: ' views/header.html',
+                        template: require('./views/header.html'),
                         controller: 'HeaderController'
                     }
                 },

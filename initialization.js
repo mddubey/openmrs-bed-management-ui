@@ -14,6 +14,8 @@ angular.module('bahmni.ipd').factory('initialization', ['$rootScope', '$q', '$ba
                 config.resolve();
             });
             return config.promise;
+            // TODO-Temp
+            // return new Promise(function(resolve, reject) {setTimeout(function() {resolve('foo');}, 300);});
         };
 
         var initApp = function () {
@@ -37,7 +39,7 @@ angular.module('bahmni.ipd').factory('initialization', ['$rootScope', '$q', '$ba
         };
 
         var initVisitLocation = function () {
-            var loginLocationUuid = $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName).uuid;
+            var loginLocationUuid = 'b1a8b05e-3542-4037-bbd3-998ee9c40574';//$bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName).uuid;
             locationService.getVisitLocation(loginLocationUuid).then(function (response) {
                 if (response.data) {
                     $rootScope.visitLocationUuid = response.data.uuid;

@@ -188,7 +188,7 @@ angular.module('bahmni.ipd')
 
             $scope.editTagsOnTheBed = function () {
                 ngDialog.openConfirm({
-                    template: 'views/editTags.html',
+                    template: require('../views/editTags.html'),
                     scope: $scope,
                     closeByEscape: true,
                     className: "ngdialog-theme-default ng-dialog-adt-popUp"
