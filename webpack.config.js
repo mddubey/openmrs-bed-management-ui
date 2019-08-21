@@ -15,7 +15,7 @@ module.exports = {
         modules: ["node_modules"]
     },
     module: {
-        // https://stackoverflow.com/a/41564433s
+        // https://stackoverflow.com/questions/38990018/webpack-provideplugin-angular/41564433#41564433
         rules: [
             {
                 test: require.resolve('angular'),
