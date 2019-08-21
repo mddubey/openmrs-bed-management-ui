@@ -29,3 +29,16 @@ Below has been the changes in llibraries from OpenMRS-Module-bahmniapps
 * Users must have `app:adt` privilege or someother privilege which will be used in `extension.json`. For now extension.json is not configured for any privilege.
 * Configure sqls for all the search-handlers defined in `extension.json`.
 * Configure `mrs.genders` propetry in global propery to `{"M":"Male", "F":"Female","O":"Other"}`.
+* Global Properties for :
+    - emrapi.sqlSearch.admittedPatients
+    - emrapi.sqlSearch.patientsToAdmit
+    - emrapi.sqlSearch.patientsToDischarge
+  Example query
+    select distinct concat(pn.given_name,' ', ifnull(pn.family_name,'')) as name,
+        pi.identifier as identifier,
+        concat("",p.uuid) as uuid
+        from person_name pn
+        join patient_identifier pi on pi.patient_id = pn.person_id
+        join person p on p.person_id = pn.person_id;
+
+* Setup admission location and beds

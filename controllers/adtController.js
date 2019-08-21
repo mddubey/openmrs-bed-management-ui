@@ -195,12 +195,14 @@ angular.module('bahmni.ipd')
                     messagingService.showMessage("error", "Please select a bed to admit patient");
                 } else if ($scope.visitSummary && $scope.visitSummary.visitType !== $scope.defaultVisitTypeName && !hideStartNewVisitPopUp) {
                     ngDialog.openConfirm({
+                        plain: true,
                         template: require('../views/visitChangeConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true
                     });
                 } else {
                     ngDialog.openConfirm({
+                        plain: true,
                         template: require('../views/admitConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true,
@@ -263,6 +265,7 @@ angular.module('bahmni.ipd')
                     messagingService.showMessage("error", "Please select a bed to transfer the patient");
                 } else {
                     ngDialog.openConfirm({
+                        plain: true,
                         template: require('../views/transferConfirmation.html'),
                         scope: $scope,
                         closeByEscape: true,
@@ -321,6 +324,7 @@ angular.module('bahmni.ipd')
                             messagingService.showMessage("error", "No active visit found for this patient");
                         } else {
                             ngDialog.openConfirm({
+                                plain: true,
                                 template: require('../views/dischargeConfirmation.html'),
                                 scope: $scope,
                                 closeByEscape: true,

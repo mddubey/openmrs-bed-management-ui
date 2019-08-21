@@ -188,6 +188,7 @@ angular.module('bahmni.ipd')
 
             $scope.editTagsOnTheBed = function () {
                 ngDialog.openConfirm({
+                    plain: true,
                     template: require('../views/editTags.html'),
                     scope: $scope,
                     closeByEscape: true,
