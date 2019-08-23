@@ -167,11 +167,12 @@ angular.module('bahmni.ipd')
                     var encounterData = getEncounterData($scope.encounterConfig.getAdmissionEncounterTypeUuid(), currentVisitTypeUuid);
                     return encounterService.create(encounterData).then(function (response) {
                         if ($scope.visitSummary === null) {
-                            visitService.getVisitSummary(response.data.visitUuid).then(function (response) {
-                                $scope.visitSummary = new Bahmni.Common.VisitSummary(response.data);
-                            });
+                            // visitService.getVisitSummary(response.data.visitUuid).then(function (response) {
+                            //     $scope.visitSummary = new Bahmni.Common.VisitSummary(response.data);
+                            // });
+                        //Todo-temp: is this needed?
                         }
-                        assignBedToPatient($rootScope.selectedBedInfo.bed, response.data.patientUuid, response.data.encounterUuid);
+                        assignBedToPatient($rootScope.selectedBedInfo.bed, response.data.patient.uuid, response.data.uuid);
                         forwardUrl(response.data, "onAdmissionForwardTo");
                     });
                 } else if ($scope.defaultVisitTypeName === null) {

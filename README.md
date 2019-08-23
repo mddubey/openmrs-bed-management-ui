@@ -25,7 +25,33 @@ Below has been the changes in libraries from OpenMRS-Module-bahmniapps
     ```
     grep "$bahmniCookieStore.get(Bahmni.Common.Constants.currentUser)" -r node_modules/bahmniapps-commons
     ```
-* Retrospctive Feature also uses bahmni cookies.
+* Retrospective feature also uses bahmni cookies.
+* Fix `blank-user.png` serving from webpack.
+* Fix All tab of Patient Queue.
+* Send EMREncounter instead of BahmniEncounter
+    * Bahmni Encounter transaction takes care of default encounter type based on location.
+    * Bahmni Encounter delegates to EmrEncounterService which takes care of encounter role of provider.
+    * Contract changes in EMR Encounter Request Data:
+    
+    
+| OpenMRS Encounter                   | Bahmni Encounter|
+| -----------------------------------| ------------------- |
+| visit                              | visitTypeUuid |
+| obs                                | observations |
+| patient                            | patientUuid |
+| encounterType                      | encounterTypeUuid |
+| location                           | locationUuid |
+| encounterProviders.provider        | providers.uuid |
+| encounterProviders.encounterRole   | <Optional> |
+
+    * Contract changes in EMR Encounter Response Data:
+    
+| OpenMRS Encounter          | Bahmni Encounter|
+| ---------------------------| ------------------- |
+| response.data.patient.uuid | response.data.patientUuid |
+| response.data.uuid         | response.data.encounterUuid |
+
+## Config Setup
 * Users must have `app:adt` privilege or someother privilege which will be used in `extension.json`. For now extension.json is not configured for any privilege.
 * Configure sqls for all the search-handlers defined in `extension.json`.
 * Configure `mrs.genders` propetry in global propery to `{"M":"Male", "F":"Female","O":"Other"}`.

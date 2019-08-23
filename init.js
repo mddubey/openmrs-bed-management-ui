@@ -20,7 +20,6 @@ require("./lib/jquery/jquery.cookie.custom");
 
 require("angular-sanitize");
 require("angular-recursion");
-// require("moment/min/moment-with-locales");
 require("select2");
 require("angular-ui-select2/src/select2");
 require("@uirouter/angularjs");

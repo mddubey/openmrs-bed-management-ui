@@ -1,3 +1,6 @@
 node_modules/
 dist/
 !lib/angular-workers/dist
+.idea/
+.DS_Store
+!node_module/bahmni-commons

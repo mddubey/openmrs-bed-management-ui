@@ -85,7 +85,7 @@ Bahmni.Common = Bahmni.Common || {};
         bahmniDispositionByPatientUrl: BAHMNI_CORE + "/disposition/patient",
         bahmniSearchUrl: BAHMNI_CORE + "/search",
         bahmniLabOrderResultsUrl: BAHMNI_CORE + "/labOrderResults",
-        bahmniEncounterUrl: BAHMNI_CORE + "/bahmniencounter",
+        bahmniEncounterUrl: "http://localhost:8080/openmrs/ws/rest/v1/encounter", //todo-temp: Remove hardcoding for url
         conceptUrl: RESTWS_V1 + "/concept",
         bahmniConceptAnswerUrl: RESTWS_V1 + "/bahmniconceptanswer",
         conceptSearchByFullNameUrl: RESTWS_V1 + "/concept?s=byFullySpecifiedName",
