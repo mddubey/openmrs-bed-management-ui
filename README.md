@@ -10,6 +10,11 @@ Below has been the changes in libraries from OpenMRS-Module-bahmniapps
 | ngInfiniteScroll@1.3.1 | Using `ng-infinite-scroll@1.3.0`, since this is the latest version on `NPM`. According to this [thread](https://github.com/sroze/ngInfiniteScroll) there are no code changes between `1.3.0` to `1.3.4`. |
 | jquery-ui-1.10.4.custom.min | Using `jquery-ui-bundle@1.11.4` since the `jquery-ui` is not bundled by default. `1.11.4` is the oldest version on `NPM`  |
 
+## Global variables from library
+Few libraries(angular, jquery) used in BahmniApps export global variables. Webpack doesn't support the idea of global variables by default. All these global variables are exported using `webpack.ProvidePlugin`. Check the `webpack.config.js` plugins section.
+
+## Other Fixes
+* According to [this issue](https://github.com/webpack/webpack/issues/2049), `webpack` doesn't work well with `angular 1`. There has been a fix provided for them using `exports-loader`. There were similar issues for `jquery 1`.
 
 ## Duplicate code
 * Duplicated `error-routehandler`. It is a small utility and need not to be extracted in library. If we are putting more stuff, it can go to a library.
@@ -68,3 +73,7 @@ Below has been the changes in libraries from OpenMRS-Module-bahmniapps
         join person p on p.person_id = pn.person_id;
 
 * Setup admission location and beds
+* Global property
+```
+    emrapi.EmrApiVisitAssignmentHandler.encounterTypeToNewVisitTypeMap => e22e39fd-7db2-45e7-80f1-60fa0d5a4378:ace71ab4-6bd6-465c-948f-a57f88a5f898
+```

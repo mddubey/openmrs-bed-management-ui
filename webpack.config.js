@@ -22,6 +22,10 @@ module.exports = {
                 loader: 'exports-loader?window.angular'
             },
             {
+                test: require.resolve('jquery/jquery'),
+                loader: 'exports-loader?window.jQuery'
+            },
+            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
@@ -31,10 +35,6 @@ module.exports = {
                 options: {
                     limit: 8192,
                 },
-            },
-            {
-                test: require.resolve('jquery/jquery'),
-                loader: 'exports-loader?window.jQuery'
             },
             {
                 test: /\.html$/,
