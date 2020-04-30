@@ -39,7 +39,7 @@
         "angular-translate-storage-local": "*",
         "angular-ui-select2": "0.0.5",
         "bahmniapps-commons": "0.0.1-beta.5",
-        "jquery": "1.9.1",
+        "jquery": "3.5.0",
         "jquery-ui-bundle": "1.11.4",
         "jquery.cookie": "1.4.1",
         "lodash": "4.3.0",
